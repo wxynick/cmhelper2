@@ -4,6 +4,7 @@
 package com.wxxr.mobile.callhelper.model;
 
 import java.util.Map;
+
 import com.wxxr.mobile.android.ui.AndroidBindingType;
 import com.wxxr.mobile.android.ui.annotation.AndroidBinding;
 import com.wxxr.mobile.callhelper.widget.CallhelperAppToolbar;

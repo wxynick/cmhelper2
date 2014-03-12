@@ -5,16 +5,26 @@ package com.wxxr.mobile.callhelper.app.model;
 
 import java.util.List;
 
+import android.graphics.Bitmap;
+
+import com.wxxr.mobile.core.annotation.BindableBean;
+
 
 /**
  * @author fudapeng
  * 短信信息分组
  */
+@BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="SMSSessionGroupBean")
 public class SMSSessionGroup {
 	/**
 	 * 发手机的号码，这个号码关联联系人
 	 */
-	private String phoneNumber;
+	private String phoneNumber,contactName;
+	
+	/**
+	 * 头像
+	 */
+	private Bitmap portrait;
 	
 //	/**
 //	 * 显示在会话列表的电话号码，漏接电话短信列表时，就要显示短信里面提示的电话号码而不是发短信的人的电话号码

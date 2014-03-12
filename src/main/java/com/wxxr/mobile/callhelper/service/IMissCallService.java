@@ -28,4 +28,15 @@ public interface IMissCallService extends ICommmonService{
 	 */
 	void switchSet();
 	
+	/**
+	 * 获取开通来电提醒的短信命令
+	 * @return
+	 */
+	String getOpenCommand(String province);
+	
+	/**
+	 * 开通业务
+	 */
+	void openBusiness();
+	
 }	

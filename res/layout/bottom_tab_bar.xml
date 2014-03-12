@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1.0"
-        android:orientation="vertical" >
+         >
 
         <ImageView
             android:id="@+id/gd_tabhome_img"
@@ -24,7 +24,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:textSize="10dip" 
-            bind:field="*"
+            bind:field="homeSelected"
             bind:on_Click="goHome"/>
 
         <TextView
@@ -38,7 +38,8 @@
             android:background="@drawable/simi_newread"
             android:gravity="center"
             android:textColor="#ffffff"
-            android:textSize="10dip" />
+            android:textSize="10dip" 
+            bind:field="siminewsText"/>
 
         <TextView
             android:id="@+id/gd_tabhome_txt"
@@ -69,7 +70,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:textSize="22.0dip" 
-            bind:field="*"
+            bind:field="newSelected"
             bind:on_Click="goNews"/>
 
         <TextView
@@ -99,7 +100,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:textSize="22.0dip" 
-            bind:field="*"
+            bind:field="plazaSelected"
             bind:on_Click="goPlaza"/>
 
         <TextView
@@ -138,7 +139,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="个人中心"
-            bind:field="*"
+            bind:field="personalCentreSelected"
             bind:on_Click="goPersonalCentre" />
     </LinearLayout>
 

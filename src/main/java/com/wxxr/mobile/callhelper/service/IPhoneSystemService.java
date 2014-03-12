@@ -77,4 +77,15 @@ public interface IPhoneSystemService extends ICommmonService{
 	 * @param callback
 	 */
 	void takePicture(PictureCallback callback,HashMap<String, String> Parameters);
+	
+	
+	/**
+	 * 开始录音
+	 */
+	void startRecorder(String path,HashMap<String, String> parameters);
+	
+	/**
+	 * 停止录音
+	 */
+	void stopRecorder();
 }

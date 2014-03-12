@@ -10,14 +10,14 @@ import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 
 import android.app.Application;
 
-import com.wxxr.mobile.callhelper.module.AppSiteSecurityModule;
-import com.wxxr.mobile.callhelper.module.WorkbenchManagerModule;
-import com.wxxr.mobile.callhelper.service.TimeService;
 import com.wxxr.mobile.android.app.AndroidFramework;
 import com.wxxr.mobile.android.app.IAndroidAppContext;
 import com.wxxr.mobile.android.app.IAndroidFramework;
 import com.wxxr.mobile.android.http.HttpRpcServiceModule;
 import com.wxxr.mobile.android.preference.PreferenceManagerModule;
+import com.wxxr.mobile.callhelper.module.AppSiteSecurityModule;
+import com.wxxr.mobile.callhelper.module.WorkbenchManagerModule;
+import com.wxxr.mobile.callhelper.service.TimeService;
 import com.wxxr.mobile.core.command.impl.CommandExecutorModule;
 import com.wxxr.mobile.core.microkernel.api.AbstractModule;
 import com.wxxr.mobile.core.rpc.rest.RestEasyClientModule;

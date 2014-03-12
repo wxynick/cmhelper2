@@ -9,12 +9,14 @@ import java.util.Dictionary;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.wxxr.mobile.core.annotation.BindableBean;
 import com.wxxr.mobile.core.util.StringUtils;
 
 /**
  * @author fudapeng
  *
  */
+@BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="PrivateSMSettingBean")
 public class PrivateSMSetting {
 	
 	/**

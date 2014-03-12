@@ -2,9 +2,12 @@ package com.wxxr.mobile.callhelper.app.model;
 
 import java.util.List;
 
+import com.wxxr.mobile.core.annotation.BindableBean;
+
 /**
  * @author fudapeng
  */
+@BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="DXHZSettingBean")
 public class DXHZSetting {
 	
 	/**

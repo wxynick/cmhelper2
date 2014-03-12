@@ -3,17 +3,12 @@
  */
 package com.wxxr.mobile.callhelper.bind;
 
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.view.View;
 import android.widget.TextView;
 
-import com.wxxr.mobile.android.app.AppUtils;
-import com.wxxr.mobile.android.ui.RUtils;
 import com.wxxr.mobile.core.ui.api.AttributeKey;
 import com.wxxr.mobile.core.ui.api.IAttributeUpdater;
 import com.wxxr.mobile.core.ui.api.IUIComponent;
-import com.wxxr.mobile.core.ui.common.AttributeKeys;
 import com.wxxr.mobile.core.util.StringUtils;
 
 /**

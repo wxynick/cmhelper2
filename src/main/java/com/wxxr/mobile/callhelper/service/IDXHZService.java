@@ -17,6 +17,12 @@ import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
 public interface IDXHZService extends ICommmonService {
 	
 	/**
+	 * 是否开通短信回执
+	 * @return
+	 */
+	boolean isOpen();
+	
+	/**
 	 * 获得回执
 	 * @return
 	 */

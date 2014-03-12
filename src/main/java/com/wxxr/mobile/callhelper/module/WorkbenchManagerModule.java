@@ -4,10 +4,10 @@
 package com.wxxr.mobile.callhelper.module;
 
 
-import com.wxxr.mobile.callhelper.bind.SlideLastEventBinder;
-import com.wxxr.mobile.callhelper.bind.TypeFaceAttributeUpdater;
 import com.wxxr.mobile.android.app.IAndroidAppContext;
 import com.wxxr.mobile.android.ui.module.AbstractWorkbenchManagerModule;
+import com.wxxr.mobile.callhelper.bind.SlideLastEventBinder;
+import com.wxxr.mobile.callhelper.bind.TypeFaceAttributeUpdater;
 import com.wxxr.mobile.core.log.api.Trace;
 import com.wxxr.mobile.core.ui.api.AttributeKey;
 import com.wxxr.mobile.core.ui.api.IBindingDecoratorRegistry;
