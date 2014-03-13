@@ -3,7 +3,7 @@
  */
 package com.wxxr.mobile.callhelper.service;
 
-import com.wxxr.mobile.android.app.IAndroidAppContext;
+import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
 import com.wxxr.mobile.callhelper.command.StartTimeCommand;
 import com.wxxr.mobile.callhelper.handler.StartTimeCommandHandler;
 import com.wxxr.mobile.core.async.api.AsyncFuture;
@@ -19,7 +19,7 @@ import com.wxxr.mobile.core.microkernel.api.AbstractModule;
  * @author fudapeng
  * 
  */
-public class TimeService extends AbstractModule<IAndroidAppContext> implements ITimeService {
+public class TimeService extends AbstractModule<ICallHeplerAppContext> implements ITimeService {
 
 	private static final Trace log = Trace.register(TimeService.class);
 	private TimeBean bean = new TimeBean();

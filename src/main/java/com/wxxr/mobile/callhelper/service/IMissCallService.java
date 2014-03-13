@@ -21,7 +21,7 @@ public interface IMissCallService extends ICommmonService{
 	 * 是否开通来电提醒
 	 * @return
 	 */
-	Switch isOpen();
+	boolean isOpen();
 	
 	/**
 	 * 设置是否开通来电提醒

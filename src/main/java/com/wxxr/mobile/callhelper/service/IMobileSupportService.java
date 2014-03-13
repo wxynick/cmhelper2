@@ -7,7 +7,7 @@ package com.wxxr.mobile.callhelper.service;
  * @author fudapeng
  *
  */
-public interface IMobileServerService {
+public interface IMobileSupportService {
 	enum MobileServerType{
 		DXHZ,LIANTXING
 	}
