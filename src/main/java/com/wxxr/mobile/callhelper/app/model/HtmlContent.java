@@ -6,13 +6,16 @@ package com.wxxr.mobile.callhelper.app.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.wxxr.mobile.core.annotation.BindableBean;
+
 
 
 /**
  * @author wangyan
  *
  */
-public class HtmlMessage implements Serializable{
+@BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="HtmlContentBean")
+public class HtmlContent implements Serializable{
 	/**
 	 * 
 	 */
@@ -187,7 +190,7 @@ public class HtmlMessage implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		HtmlMessage other = (HtmlMessage) obj;
+		HtmlContent other = (HtmlContent) obj;
 		if (abstrct == null) {
 			if (other.abstrct != null)
 				return false;

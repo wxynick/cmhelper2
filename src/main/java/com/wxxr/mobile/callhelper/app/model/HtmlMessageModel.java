@@ -2,13 +2,19 @@ package com.wxxr.mobile.callhelper.app.model;
 
 import java.io.Serializable;
 
-public class HtmlMessageBean implements Serializable {
-	/**
-	 * 
-	 */
+import com.wxxr.mobile.core.annotation.BindableBean;
+
+/**
+ * 
+ * @author fudapeng
+ *
+ */
+
+@BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="HtmlMessageBean")
+public class HtmlMessageModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Long msgId;
-	private HtmlMessage htmlMessage;
+	private HtmlContent htmlMessage;
 	private String remoteURL;
 	private long readTime;
 	public Long getMsgId() {
@@ -17,10 +23,10 @@ public class HtmlMessageBean implements Serializable {
 	public void setMsgId(Long msgId) {
 		this.msgId = msgId;
 	}
-	public HtmlMessage getHtmlMessage() {
+	public HtmlContent getHtmlMessage() {
 		return htmlMessage;
 	}
-	public void setHtmlMessage(HtmlMessage htmlMessage) {
+	public void setHtmlMessage(HtmlContent htmlMessage) {
 		this.htmlMessage = htmlMessage;
 	}
 	public String getRemoteURL() {

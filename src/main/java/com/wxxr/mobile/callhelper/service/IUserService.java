@@ -3,14 +3,7 @@
  */
 package com.wxxr.mobile.callhelper.service;
 
-import com.wxxr.javax.ws.rs.Consumes;
-import com.wxxr.javax.ws.rs.GET;
-import com.wxxr.javax.ws.rs.POST;
-import com.wxxr.javax.ws.rs.Path;
-import com.wxxr.javax.ws.rs.Produces;
-import com.wxxr.javax.ws.rs.QueryParam;
-import com.wxxr.javax.ws.rs.core.MediaType;
-import com.wxxr.mobile.callhelper.app.model.UserDetail;
+import com.wxxr.mobile.callhelper.app.bean.UserDetailBean;
 
 /**
  * @author neillin
@@ -22,14 +15,14 @@ public interface IUserService {
 	 * 获取用户详细信息
 	 * @param monitor
 	 */
-	public UserDetail getUserDetail();
+	public UserDetailBean getUserDetail();
 	
 	
 	/**
 	 * 获取用户详细信息
 	 * @param monitor
 	 */
-	public boolean updateUserDetail(UserDetail newValue);
+	public boolean updateUserDetail(UserDetailBean newValue);
 	
 	/**
 	 * 上传图片

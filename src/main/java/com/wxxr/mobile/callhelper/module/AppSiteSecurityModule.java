@@ -6,8 +6,8 @@ package com.wxxr.mobile.callhelper.module;
 import java.io.InputStream;
 import java.security.KeyStore;
 
-import com.wxxr.mobile.android.app.IAndroidAppContext;
 import com.wxxr.mobile.android.security.DummySiteSecurityModule;
+import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
 import com.wxxr.mobile.core.log.api.Trace;
 import com.wxxr.mobile.core.security.api.ISiteSecurityService;
 
@@ -21,7 +21,7 @@ import com.wxxr.mobile.core.security.api.ISiteSecurityService;
  * @author wangxuyang
  *
  */
-public class AppSiteSecurityModule extends DummySiteSecurityModule<IAndroidAppContext> {
+public class AppSiteSecurityModule extends DummySiteSecurityModule<ICallHeplerAppContext> {
 	private static final Trace log = Trace.register(AppSiteSecurityModule.class);
 	private KeyStore trustKeyStore;
 	@Override

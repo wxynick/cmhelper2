@@ -13,7 +13,7 @@ import com.wxxr.mobile.core.ui.annotation.View;
 import com.wxxr.mobile.core.ui.common.ViewBase;
 
 @View(name = "MissCallView", description = "通信")
-@AndroidBinding(type = AndroidBindingType.FRAGMENT, layoutId = "R.layout.home_page_new")
+@AndroidBinding(type = AndroidBindingType.FRAGMENT, layoutId = "R.layout.common_session_list")
 abstract class MissCallView extends ViewBase{
 	
 	@Bean(type=BindingType.Service)

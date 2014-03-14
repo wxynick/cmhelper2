@@ -6,7 +6,7 @@ package com.wxxr.mobile.callhelper.model;
 import com.wxxr.mobile.android.ui.AndroidBindingType;
 import com.wxxr.mobile.android.ui.annotation.AndroidBinding;
 import com.wxxr.mobile.callhelper.service.IMissCallService;
-import com.wxxr.mobile.callhelper.service.IMobileServerService;
+import com.wxxr.mobile.callhelper.service.IMobileSupportService;
 import com.wxxr.mobile.callhelper.service.IPhoneSystemService;
 import com.wxxr.mobile.core.ui.annotation.Bean;
 import com.wxxr.mobile.core.ui.annotation.Bean.BindingType;
@@ -32,7 +32,7 @@ public class MissCallGuideView extends ViewBase {
 	IPhoneSystemService phoneSystemService;
 	
 	@Bean(type=BindingType.Service)
-	IMobileServerService mobileService;
+	IMobileSupportService mobileService;
 	
 	
 	

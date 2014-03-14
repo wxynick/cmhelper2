@@ -4,6 +4,7 @@
 package com.wxxr.mobile.callhelper.service.impl;
 
 import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
+import com.wxxr.mobile.callhelper.app.bean.UserDetailBean;
 import com.wxxr.mobile.callhelper.app.model.UserDetail;
 import com.wxxr.mobile.callhelper.service.IUserService;
 import com.wxxr.mobile.core.microkernel.api.AbstractModule;
@@ -13,22 +14,23 @@ import com.wxxr.mobile.core.microkernel.api.AbstractModule;
  * @param <T>
  *
  */
-public class UserService<T> extends AbstractModule<ICallHeplerAppContext> implements IUserService {
+public class UserService extends AbstractModule<ICallHeplerAppContext> implements IUserService {
 
 	/* (non-Javadoc)
 	 * @see com.wxxr.mobile.callhelper.service.IUserService#getUserDetail()
 	 */
+	
+	private UserDetailBean currentUserDetail = new UserDetailBean();
 	@Override
-	public UserDetail getUserDetail() {
-		
-		return null;
+	public UserDetailBean getUserDetail() {
+		return currentUserDetail;
 	}
 
 	/* (non-Javadoc)
 	 * @see com.wxxr.mobile.callhelper.service.IUserService#updateUserDetail(com.wxxr.mobile.callhelper.app.model.UserDetail)
 	 */
 	@Override
-	public boolean updateUserDetail(UserDetail newValue) {
+	public boolean updateUserDetail(UserDetailBean newValue) {
 		
 		return false;
 	}

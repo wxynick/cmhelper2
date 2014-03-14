@@ -6,6 +6,7 @@ package com.wxxr.mobile.callhelper.service.impl;
 import java.util.List;
 
 import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
+import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.app.model.SMSInfo;
 import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
 import com.wxxr.mobile.callhelper.service.IPrivateSMService;
@@ -57,7 +58,7 @@ public class PrivateSMService extends AbstractModule<ICallHeplerAppContext> impl
 	 * @see com.wxxr.mobile.callhelper.service.ICommmonService#getShowList()
 	 */
 	@Override
-	public List<SMSSessionGroup> getShowList() {
+	public List<SMSSessionGroupBean> getShowList() {
 		
 		return null;
 	}

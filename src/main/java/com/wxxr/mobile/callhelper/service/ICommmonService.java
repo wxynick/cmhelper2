@@ -2,6 +2,7 @@ package com.wxxr.mobile.callhelper.service;
 
 import java.util.List;
 
+import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.app.model.SMSInfo;
 import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
 
@@ -67,7 +68,7 @@ public interface ICommmonService {
 	 * 得到页面显示列表
 	 * @return
 	 */
-	List<SMSSessionGroup> getShowList();
+	List<SMSSessionGroupBean> getShowList();
 	
 	
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
+import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.app.model.ContactPerson;
 import com.wxxr.mobile.callhelper.app.model.SMSInfo;
 import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
@@ -98,7 +99,7 @@ public class PhoneSystemService extends AbstractModule<ICallHeplerAppContext> im
 	 * @see com.wxxr.mobile.callhelper.service.ICommmonService#getShowList()
 	 */
 	@Override
-	public List<SMSSessionGroup> getShowList() {
+	public List<SMSSessionGroupBean> getShowList() {
 		
 		return null;
 	}
@@ -209,6 +210,12 @@ public class PhoneSystemService extends AbstractModule<ICallHeplerAppContext> im
 	@Override
 	protected void stopService() {
 		
+		
+	}
+
+	@Override
+	public void sentSoundNotification(String resource) {
+		// TODO Auto-generated method stub
 		
 	}
 

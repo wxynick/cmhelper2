@@ -3,6 +3,8 @@
  */
 package com.wxxr.mobile.callhelper.model;
 
+import android.widget.ImageView;
+
 import com.wxxr.mobile.android.ui.AndroidBindingType;
 import com.wxxr.mobile.android.ui.annotation.AndroidBinding;
 import com.wxxr.mobile.callhelper.service.IPrivateSMService;
@@ -34,29 +36,39 @@ public abstract class HomePage extends PageBase {
 	
 	
 	@ViewGroup(viewIds = { "MainHomeView", "MicroMessageView", "PlazaHomeView",
-			"PersonalCentreView" })
+			"PersonalCentreView" ,"MissCallGuideView" , "MissCallView"})
 	IViewGroup contents;
 	
 	
 	@Bean(type=BindingType.Pojo)
-	@Field(valueKey="selected",binding="${homeSelected}")
+	private boolean hs;
+	
+	@Bean(type=BindingType.Pojo)
+	private boolean ns;
+	
+	@Bean(type=BindingType.Pojo)
+	boolean pd;
+	
+	@Bean(type=BindingType.Pojo)
+	boolean psd;
+	
+	@Field(valueKey="selected",binding="${hs}")
 	private boolean homeSelected;
 	
-	@Bean(type=BindingType.Pojo)
-	@Field(valueKey="selected",binding="${newSelected}")
+	
+	@Field(valueKey="selected",binding="${ns}")
 	boolean newSelected;
 	
-	@Bean(type=BindingType.Pojo)
-	@Field(valueKey="selected",binding="${plazaSelected}")
+	
+	@Field(valueKey="selected",binding="${pd}")
 	boolean plazaSelected;
 	
-	@Bean(type=BindingType.Pojo)
-	@Field(valueKey="selected",binding="${personalCentreSelected}")
+	@Field(valueKey="selected",binding="${psd}")
 	boolean personalCentreSelected;
 	
 	
-	@Field(valueKey="visible",visibleWhen="${size != 0 ? true : false}",attributes={@Attribute(name="text",value="${size}")})
-	boolean showSiminews;
+	@Field(valueKey="visible",visibleWhen="${size != 0 ? true : false}",attributes={@Attribute(name="textsize",value="${size}")})
+	boolean siminewsText;
 	
 	@Bean(type=BindingType.Pojo,express="${psm.getAllUnreadSize()}")
 	int size;
@@ -72,8 +84,8 @@ public abstract class HomePage extends PageBase {
 	 */
 	@Command(navigations = { @Navigation(on = "*", showView = "MainHomeView") })
 	String goHome(InputEvent event) {
-		homeSelected = true;
-		personalCentreSelected = plazaSelected = newSelected = false;
+		hs = true;
+		psd = pd = ns = false;
 		registerBeans();
 		return "";
 	}
@@ -86,8 +98,8 @@ public abstract class HomePage extends PageBase {
 	 */
 	@Command(navigations = { @Navigation(on = "*", showView = "MicroMessageView") })
 	String goNews(InputEvent event) {
-		newSelected  = true;
-		personalCentreSelected = plazaSelected = homeSelected = false;
+		ns  = true;
+		psd = pd = hs = false;
 		registerBeans();
 		return "";
 	}
@@ -100,9 +112,10 @@ public abstract class HomePage extends PageBase {
 	 */
 	@Command(navigations = { @Navigation(on = "*", showView = "PlazaHomeView") })
 	String goPlaza(InputEvent event) {
-		plazaSelected  = true;
-		personalCentreSelected = newSelected = homeSelected = false;
+		pd  = true;
+		psd = ns = hs = false;
 		registerBeans();
+		ImageView v = null;
 		return "";
 	}
 
@@ -114,17 +127,17 @@ public abstract class HomePage extends PageBase {
 	 */
 	@Command(navigations = { @Navigation(on = "*", showView = "PersonalCentreView") })
 	String goPersonalCentre(InputEvent event) {
-		personalCentreSelected = true;
-		plazaSelected = newSelected = homeSelected = false;
+		psd = true;
+		pd = ns = hs = false;
 		registerBeans();
 		return "";
 	}
 	
 	private void registerBeans(){
-		registerBean("homeSelected", homeSelected);
-		registerBean("personalCentreSelected", personalCentreSelected);
-		registerBean("plazaSelected", plazaSelected);
-		registerBean("newSelected", newSelected);
+		registerBean("hs", hs);
+		registerBean("psd", psd);
+		registerBean("pd", pd);
+		registerBean("ns", ns);
 	}
 
 		

@@ -49,6 +49,12 @@ public interface IPhoneSystemService extends ICommmonService{
 	
 	
 	/**
+	 * 发送通知
+	 */
+	void sentSoundNotification(String resource);
+	
+	
+	/**
 	 * 发送通知,带有系统参数
 	 */
 	void sentNotification(String tickerText,Map<String,Object> args);

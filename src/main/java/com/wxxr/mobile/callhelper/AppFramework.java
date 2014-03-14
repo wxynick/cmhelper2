@@ -18,6 +18,17 @@ import com.wxxr.mobile.android.preference.PreferenceManagerModule;
 import com.wxxr.mobile.callhelper.module.AppSiteSecurityModule;
 import com.wxxr.mobile.callhelper.module.WorkbenchManagerModule;
 import com.wxxr.mobile.callhelper.service.TimeService;
+import com.wxxr.mobile.callhelper.service.impl.AffiliationAreaService;
+import com.wxxr.mobile.callhelper.service.impl.DXHZService;
+import com.wxxr.mobile.callhelper.service.impl.FeedBackService;
+import com.wxxr.mobile.callhelper.service.impl.HistoryDataImportService;
+import com.wxxr.mobile.callhelper.service.impl.MissCallService;
+import com.wxxr.mobile.callhelper.service.impl.MobileSupportService;
+import com.wxxr.mobile.callhelper.service.impl.PhoneSystemService;
+import com.wxxr.mobile.callhelper.service.impl.PrivateSMService;
+import com.wxxr.mobile.callhelper.service.impl.SMSInterceptService;
+import com.wxxr.mobile.callhelper.service.impl.SmsContentParseModule;
+import com.wxxr.mobile.callhelper.service.impl.UserService;
 import com.wxxr.mobile.core.command.impl.CommandExecutorModule;
 import com.wxxr.mobile.core.microkernel.api.AbstractModule;
 import com.wxxr.mobile.core.rpc.rest.RestEasyClientModule;
@@ -26,12 +37,12 @@ import com.wxxr.mobile.core.rpc.rest.RestEasyClientModule;
  * @author fudapeng
  *
  */
-public class AppFramework extends AndroidFramework<IAndroidAppContext, AbstractModule<IAndroidAppContext>> {
+public class AppFramework extends AndroidFramework<ICallHeplerAppContext, AbstractModule<ICallHeplerAppContext>> {
 
 	private final MobileApplication app;
 	
 	IAndroidAppContext a;
-	private class ComHelperAppContextImpl extends AbstractContext implements IAndroidAppContext {
+	private class ComHelperAppContextImpl extends AbstractContext implements ICallHeplerAppContext {
 		private ExecutorService executor = Executors.newSingleThreadExecutor();
 		@SuppressWarnings("rawtypes")
 		@Override
@@ -63,7 +74,7 @@ public class AppFramework extends AndroidFramework<IAndroidAppContext, AbstractM
 	}
 
 	@Override
-	protected IAndroidAppContext getContext() {
+	protected ICallHeplerAppContext getContext() {
 		if(context == null)
 			context = new ComHelperAppContextImpl();
 		return context;
@@ -71,19 +82,19 @@ public class AppFramework extends AndroidFramework<IAndroidAppContext, AbstractM
 
 	@Override
 	protected void initModules() {
-		registerKernelModule(new PreferenceManagerModule<IAndroidAppContext>());
+		registerKernelModule(new PreferenceManagerModule<ICallHeplerAppContext>());
 		
 		
 		
-		RestEasyClientModule<IAndroidAppContext> rest = new RestEasyClientModule<IAndroidAppContext>();
+		RestEasyClientModule<ICallHeplerAppContext> rest = new RestEasyClientModule<ICallHeplerAppContext>();
 		rest.getClient().register(JacksonJsonProvider.class);
 		registerKernelModule(rest);
 		
-		CommandExecutorModule<IAndroidAppContext> cmdExecutor = new CommandExecutorModule<IAndroidAppContext>();
+		CommandExecutorModule<ICallHeplerAppContext> cmdExecutor = new CommandExecutorModule<ICallHeplerAppContext>();
 		registerKernelModule(cmdExecutor);
 		
 		
-		HttpRpcServiceModule<IAndroidAppContext> m = new HttpRpcServiceModule<IAndroidAppContext>();
+		HttpRpcServiceModule<ICallHeplerAppContext> m = new HttpRpcServiceModule<ICallHeplerAppContext>();
 		m.setEnablegzip(false);
 		m.setConnectionPoolSize(30);
 		registerKernelModule(m);
@@ -91,6 +102,20 @@ public class AppFramework extends AndroidFramework<IAndroidAppContext, AbstractM
 		registerKernelModule(new AppSiteSecurityModule());
 		registerKernelModule(new TimeService());
 		registerKernelModule(new WorkbenchManagerModule());
+		
+		
+		registerKernelModule(new FeedBackService());
+		registerKernelModule(new DXHZService());
+		registerKernelModule(new UserService());
+		registerKernelModule(new MissCallService());
+		registerKernelModule(new AffiliationAreaService());
+		registerKernelModule(new HistoryDataImportService());
+		registerKernelModule(new MobileSupportService());
+		registerKernelModule(new PhoneSystemService());
+		registerKernelModule(new PrivateSMService());
+		registerKernelModule(new SmsContentParseModule());
+		registerKernelModule(new SMSInterceptService());
+
 	}
 
 }

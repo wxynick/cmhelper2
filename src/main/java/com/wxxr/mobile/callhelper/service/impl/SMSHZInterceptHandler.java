@@ -3,6 +3,7 @@
  */
 package com.wxxr.mobile.callhelper.service.impl;
 
+import com.wxxr.mobile.callhelper.app.bean.SMSInfoBean;
 import com.wxxr.mobile.callhelper.app.model.SMSInfo;
 import com.wxxr.mobile.callhelper.service.ISMSInterceptHandler;
 
@@ -17,7 +18,7 @@ public class SMSHZInterceptHandler implements ISMSInterceptHandler {
 	 * @see com.wxxr.mobile.callhelper.service.ISmsHandler#handle(com.wxxr.mobile.callhelper.app.model.SmsInfo)
 	 */
 	@Override
-	public boolean handle(SMSInfo smsInfo) {
+	public boolean handle(SMSInfoBean smsInfo) {
 		return false;
 	}
 

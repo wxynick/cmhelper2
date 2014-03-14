@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.wxxr.mobile.callhelper.event;
+package com.wxxr.mobile.callhelper.compatibility.event;
 
 /**
  * @author neillin
  *
  */
-public class NumberAddedEvent extends PrivateSMEvent {
+public class NumberRemovedEvent extends PrivateSMEvent {
 	public String getNumber() {
 		return (String)getSource();
 	}

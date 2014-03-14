@@ -2,12 +2,12 @@ package com.wxxr.mobile.callhelper.service;
 
 import java.util.List;
 
-import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
+import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 
 /**
  * @author fudapeng
  */
-public interface IMissCallService extends ICommmonService{
+public interface IMissCallService extends ICommmonService,ISmsInterceptRule{
 	
 	/**
 	 * 获得指定时间段的回执信息
@@ -15,7 +15,7 @@ public interface IMissCallService extends ICommmonService{
 	 * @param end
 	 * @return
 	 */
-	List<SMSSessionGroup> getgetShowListByTime(long start, long end);
+	List<SMSSessionGroupBean> getShowListByTime(long start, long end);
 	
 	/**
 	 * 是否开通来电提醒
@@ -38,5 +38,6 @@ public interface IMissCallService extends ICommmonService{
 	 * 开通业务
 	 */
 	void openBusiness();
+	
 	
 }	

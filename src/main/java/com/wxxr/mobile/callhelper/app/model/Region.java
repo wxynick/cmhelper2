@@ -1,5 +1,13 @@
 package com.wxxr.mobile.callhelper.app.model;
 
+import com.wxxr.mobile.core.annotation.BindableBean;
+
+/**
+ * 
+ * @author fudapeng
+ *
+ */
+@BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="RegionBean")
 public class Region {
 	
 	private long regionId;
