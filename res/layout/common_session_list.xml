@@ -36,7 +36,9 @@
                     android:scrollbars="none"
                     android:visibility="visible" 
                     bind:field="smsgroup"
-                    bind:itemViewId="MissCallListItemView"/>
+                    bind:itemViewId="MissCallSessionListItemView"
+                    bind:on_ItemClick="itemClicked@ItemClickDecorator"
+                    bind:on_ItemLongClick="itemLongClick"/>
             </FrameLayout>
         </LinearLayout>
     </LinearLayout>

@@ -13,6 +13,7 @@
     <!-- @drawable/shezhi -->
     <style name="floatwindow" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item><!--除去title-->
     </style>
 
     <style name="popAlert" parent="@android:style/Theme.Dialog">
