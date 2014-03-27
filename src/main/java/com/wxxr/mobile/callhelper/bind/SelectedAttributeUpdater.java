@@ -18,7 +18,7 @@ public class SelectedAttributeUpdater implements IAttributeUpdater<View> {
 
 	@Override
 	public boolean acceptable(Object arg0) {
-		return arg0 instanceof TextView;
+		return arg0 instanceof View;
 	}
 
 	@Override

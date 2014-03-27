@@ -21,10 +21,10 @@ public class SMSSessionGroup {
 	 */
 	private String phoneNumber,contactName;
 	
-	/**
-	 * 头像
-	 */
-	private Bitmap portrait;
+//	/**
+//	 * 头像
+//	 */
+//	private String portrait;
 	
 //	/**
 //	 * 显示在会话列表的电话号码，漏接电话短信列表时，就要显示短信里面提示的电话号码而不是发短信的人的电话号码

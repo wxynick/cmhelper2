@@ -6,6 +6,7 @@ package com.wxxr.mobile.callhelper.service.impl;
 import java.util.List;
 
 import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
+import com.wxxr.mobile.callhelper.app.bean.SMSInfoBean;
 import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.app.model.SMSInfo;
 import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
@@ -229,7 +230,7 @@ public class PrivateSMService extends AbstractModule<ICallHeplerAppContext> impl
 	 * @see com.wxxr.mobile.callhelper.service.IPrivateSMService#deleteMessageGroup(com.wxxr.mobile.callhelper.app.model.SMSSessionGroup)
 	 */
 	@Override
-	public void deleteMessageGroup(SMSSessionGroup msg) {
+	public void deleteMessageGroup(SMSSessionGroupBean msg) {
 		
 
 	}
@@ -257,6 +258,12 @@ public class PrivateSMService extends AbstractModule<ICallHeplerAppContext> impl
 	@Override
 	protected void stopService() {
 		
+		
+	}
+
+	@Override
+	public void saveMessage(SMSInfoBean bean) {
+		// TODO Auto-generated method stub
 		
 	}
 

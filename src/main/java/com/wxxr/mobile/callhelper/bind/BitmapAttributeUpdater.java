@@ -4,11 +4,12 @@
 package com.wxxr.mobile.callhelper.bind;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.wxxr.mobile.android.app.AppUtils;
+import com.wxxr.mobile.callhelper.service.support.ItemPortraitRule;
 import com.wxxr.mobile.core.ui.api.AttributeKey;
 import com.wxxr.mobile.core.ui.api.IAttributeUpdater;
 import com.wxxr.mobile.core.ui.api.IUIComponent;
@@ -17,7 +18,7 @@ import com.wxxr.mobile.core.ui.api.IUIComponent;
  * @author fudapeng
  *
  */
-public class IconAttributeUpdater implements IAttributeUpdater<View> {
+public class BitmapAttributeUpdater implements IAttributeUpdater<View> {
 
 	@Override
 	public boolean acceptable(Object arg0) {
@@ -28,15 +29,17 @@ public class IconAttributeUpdater implements IAttributeUpdater<View> {
 	public <T> void updateControl(View control, AttributeKey<T> attrType,
 			IUIComponent field, Object value) {
 		View tv = (View)control;
-		if(value instanceof Byte[]){
-			
-			byte[] bytes= new byte[((Byte[])value).length];
-			for(int i = 0; i< ((Byte[])value).length; i++){
-				bytes[i] = ((Byte[])value)[i];
+		if(value instanceof Bitmap){
+			tv.setBackgroundDrawable(new BitmapDrawable((Bitmap)value));
+		}else if(value instanceof String){//给电话名字和号码给个头像
+			String[] array = ((String) value).split(":");
+			if(array.length == 2){
+				ItemPortraitRule r = ItemPortraitRule.getInstance(AppUtils.getFramework().getAndroidApplication());
+				Bitmap headIcon = r.getItemPortrait(array[0], array[1]);
+				tv.setBackgroundDrawable(new BitmapDrawable(headIcon));
+				
 			}
 			
-			Bitmap head = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-			tv.setBackgroundDrawable(new BitmapDrawable(head));
 		}
 	}
 

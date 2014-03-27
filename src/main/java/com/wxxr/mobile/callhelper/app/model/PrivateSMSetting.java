@@ -17,7 +17,7 @@ import com.wxxr.mobile.core.util.StringUtils;
  *
  */
 @BindableBean(pkg="com.wxxr.mobile.callhelper.app.bean",className="PrivateSMSettingBean")
-public class PrivateSMSetting {
+public class PrivateSMSetting extends Setting{
 	
 	/**
 	 * 是否开启私密锁

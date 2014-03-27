@@ -217,6 +217,7 @@ public class SMSInfoBean implements IBindableBean {
     	bean.setCdate(value.getCdate());
     	bean.setMstyle(value.getMstyle());
     	bean.setRead(value.getState() != null && value.getState() == 0);
+    	bean.setContent(value.getContent());
     	return bean;
     }
 

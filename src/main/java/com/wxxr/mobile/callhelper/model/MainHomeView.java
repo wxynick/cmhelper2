@@ -3,8 +3,11 @@
  */
 package com.wxxr.mobile.callhelper.model;
 
+import java.util.List;
+
 import com.wxxr.mobile.android.ui.AndroidBindingType;
 import com.wxxr.mobile.android.ui.annotation.AndroidBinding;
+import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.service.ICallRecorderService;
 import com.wxxr.mobile.callhelper.service.IDXHZService;
 import com.wxxr.mobile.callhelper.service.IMissCallService;
@@ -16,15 +19,17 @@ import com.wxxr.mobile.core.ui.annotation.Command;
 import com.wxxr.mobile.core.ui.annotation.Menu;
 import com.wxxr.mobile.core.ui.annotation.Navigation;
 import com.wxxr.mobile.core.ui.annotation.View;
-import com.wxxr.mobile.core.ui.api.CommandResult;
 import com.wxxr.mobile.core.ui.api.IMenu;
 import com.wxxr.mobile.core.ui.api.InputEvent;
 import com.wxxr.mobile.core.ui.common.ViewBase;
 
-@View(name="MainHomeView", description="通信助手", provideSelection = true)
+@View(name="MainHomeView", description="通信助手")
 @AndroidBinding(type=AndroidBindingType.FRAGMENT,layoutId="R.layout.main_home_view")
 public abstract class MainHomeView extends ViewBase {
 	static Trace log = Trace.getLogger(MainHomeView.class);
+	
+	@Menu(items = { "left", "right" })
+	IMenu toolbar;
 	
 	@Bean(type=BindingType.Service)
 	IMissCallService missCallSerivce;
@@ -61,9 +66,11 @@ public abstract class MainHomeView extends ViewBase {
 	boolean isHasRecord;
 	
 	
-	@Command(navigations={@Navigation(on="missCall",showView="MissCallView")
+	@Command(navigations={@Navigation(on="missCall",showView="MissCallSessionListView")
 						 ,@Navigation(on="missCallGuide",showView="MissCallGuideView")})
 	String navToMissCallView(InputEvent event){
+//		List<SMSSessionGroupBean> l = missCallSerivce.getShowList();
+//		 && l.size() > 0
 		if(isOpenMissCall){
 			return "missCall";
 		}else{

@@ -6,6 +6,7 @@ package com.wxxr.mobile.callhelper.service.impl;
 import java.util.List;
 
 import com.wxxr.mobile.callhelper.ICallHeplerAppContext;
+import com.wxxr.mobile.callhelper.app.bean.SMSInfoBean;
 import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.app.model.Channel;
 import com.wxxr.mobile.callhelper.app.model.DXHZSetting;
@@ -42,7 +43,7 @@ public class DXHZService extends AbstractModule<ICallHeplerAppContext> implement
 	 * @see com.wxxr.mobile.callhelper.service.ICommmonService#deleteMessageGroup(com.wxxr.mobile.callhelper.app.model.SMSSessionGroup)
 	 */
 	@Override
-	public void deleteMessageGroup(SMSSessionGroup msg) {
+	public void deleteMessageGroup(SMSSessionGroupBean msg) {
 		
 
 	}
@@ -146,23 +147,6 @@ public class DXHZService extends AbstractModule<ICallHeplerAppContext> implement
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.wxxr.mobile.callhelper.service.IDXHZService#getDXHZSetting()
-	 */
-	@Override
-	public DXHZSetting getDXHZSetting() {
-		
-		return null;
-	}
-
-	/* (non-Javadoc)
-	 * @see com.wxxr.mobile.callhelper.service.IDXHZService#setDXHZSetting(com.wxxr.mobile.callhelper.app.model.DXHZSetting)
-	 */
-	@Override
-	public boolean setDXHZSetting(DXHZSetting setting) {
-		
-		return false;
-	}
 
 	@Override
 	protected void initServiceDependency() {
@@ -179,6 +163,15 @@ public class DXHZService extends AbstractModule<ICallHeplerAppContext> implement
 	protected void stopService() {
 		
 		
+	}
+
+	@Override
+	public boolean getSomeOneSet(int what) {
+		return false;
+	}
+
+	@Override
+	public void saveMessage(SMSInfoBean bean) {
 	}
 
 }

@@ -2,6 +2,7 @@ package com.wxxr.mobile.callhelper.service;
 
 import java.util.List;
 
+import com.wxxr.mobile.callhelper.app.bean.SMSInfoBean;
 import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 
 /**
@@ -37,7 +38,15 @@ public interface IMissCallService extends ICommmonService,ISmsInterceptRule{
 	/**
 	 * 开通业务
 	 */
-	void openBusiness();
+	void openBusiness(String content);
+	
+	
+	/**
+	 * 是否显示时间
+	 * @param bean
+	 * @return
+	 */
+	boolean showTime(SMSInfoBean bean);
 	
 	
 }	

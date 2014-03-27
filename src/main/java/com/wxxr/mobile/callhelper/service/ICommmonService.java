@@ -2,6 +2,7 @@ package com.wxxr.mobile.callhelper.service;
 
 import java.util.List;
 
+import com.wxxr.mobile.callhelper.app.bean.SMSInfoBean;
 import com.wxxr.mobile.callhelper.app.bean.SMSSessionGroupBean;
 import com.wxxr.mobile.callhelper.app.model.SMSInfo;
 import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
@@ -10,6 +11,13 @@ import com.wxxr.mobile.callhelper.app.model.SMSSessionGroup;
  * @author fudapeng
  */
 public interface ICommmonService {
+	
+	/**
+	 * 存储一条短信
+	 * @param bean
+	 */
+	void saveMessage(SMSInfoBean bean);
+	
 	/**
 	 * 删除短信
 	 * @param msgId
@@ -27,16 +35,13 @@ public interface ICommmonService {
 	 * 删除短信分组
 	 * @param msg
 	 */
-	void deleteMessageGroup(SMSSessionGroup msg);
+	void deleteMessageGroup(SMSSessionGroupBean msg);
 	
 	/**
 	 * 删除短信
 	 * @param msg
 	 */
 	void deleteMessage(String number,boolean needfreshcache);
-	
-	
-	
 	
 	
 	/**

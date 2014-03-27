@@ -43,7 +43,7 @@ public class SMSInterceptService extends AbstractModule<ICallHeplerAppContext> i
 	 * @see com.wxxr.mobile.callhelper.service.ISMSInterceptService#remoteInterceptHandle(com.wxxr.mobile.callhelper.service.ISMSInterceptHandler)
 	 */
 	@Override
-	public void remoteInterceptHandle(ISMSInterceptHandler handler) {
+	public void removeInterceptHandle(ISMSInterceptHandler handler) {
 		if(handlers.contains(handler)){
 			handlers.remove(handler);
 		}

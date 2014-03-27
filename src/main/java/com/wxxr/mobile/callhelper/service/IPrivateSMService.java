@@ -86,7 +86,7 @@ public interface IPrivateSMService extends ICommmonService{
 	void setMoveOutgoing2PrivateOutbox(boolean bool);
 	
 	/**
-	 * 增加私密短信 开始私密人没有短信，后来来的短信
+	 * 增加私密短信 开始私密人没有短信，后来的短信
 	 * @param msg
 	 */
 	void addPrivateMessage(SMSSessionGroup msg);
@@ -119,28 +119,28 @@ public interface IPrivateSMService extends ICommmonService{
 	String getContactName(String number);
 	
 	
-	/**
-	 * 删除短信
-	 * @param msgId
-	 */
-	void deleteMessage(Integer msgId);
-	
-	/**
-	 * 删除短信
-	 * @param msg
-	 */
-	void deleteMessage(SMSInfo msg);
-	
-	
-	/**
-	 * 删除短信分组
-	 * @param msg
-	 */
-	void deleteMessageGroup(SMSSessionGroup msg);
-	
-	/**
-	 * 删除短信
-	 * @param msg
-	 */
-	void deleteMessage(String number,boolean needfreshcache);
+//	/**
+//	 * 删除短信
+//	 * @param msgId
+//	 */
+//	void deleteMessage(Integer msgId);
+//	
+//	/**
+//	 * 删除短信
+//	 * @param msg
+//	 */
+//	void deleteMessage(SMSInfo msg);
+//	
+//	
+//	/**
+//	 * 删除短信分组
+//	 * @param msg
+//	 */
+//	void deleteMessageGroup(SMSSessionGroup msg);
+//	
+//	/**
+//	 * 删除短信
+//	 * @param msg
+//	 */
+//	void deleteMessage(String number,boolean needfreshcache);
 }

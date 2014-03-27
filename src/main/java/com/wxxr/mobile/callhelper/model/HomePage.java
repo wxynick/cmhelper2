@@ -14,6 +14,9 @@ import com.wxxr.mobile.core.ui.annotation.Bean.BindingType;
 import com.wxxr.mobile.core.ui.annotation.Command;
 import com.wxxr.mobile.core.ui.annotation.Field;
 import com.wxxr.mobile.core.ui.annotation.Navigation;
+import com.wxxr.mobile.core.ui.annotation.OnCreate;
+import com.wxxr.mobile.core.ui.annotation.OnShow;
+import com.wxxr.mobile.core.ui.annotation.Parameter;
 import com.wxxr.mobile.core.ui.annotation.View;
 import com.wxxr.mobile.core.ui.annotation.ViewGroup;
 import com.wxxr.mobile.core.ui.api.IViewGroup;
@@ -27,16 +30,16 @@ import com.wxxr.mobile.core.ui.common.PageBase;
  * @author fudapeng
  *
  */
-@View(name = "home", withToolbar = true, description = "通信")
+@View(name = "home", withToolbar = true, description = "")
 @AndroidBinding(type = AndroidBindingType.FRAGMENT_ACTIVITY, layoutId = "R.layout.home_page_new")
 public abstract class HomePage extends PageBase {
 	
-	private static final String[] VIEWIDs = new String[] { "MainHomeView",
-		"MicroMessageView","PlazaHomeView", "PersonalCentreView","MissCallGuideView","MissCallView" };
+//	private static final String[] VIEWIDs = new String[] { "MainHomeView",
+//		"MicroMessageView","PlazaHomeView", "PersonalCentreView","MissCallGuideView","MissCallSessionListView","MissCallSessionView","SMSSessionleftItem" };
 	
 	
 	@ViewGroup(viewIds = { "MainHomeView", "MicroMessageView", "PlazaHomeView",
-			"PersonalCentreView" ,"MissCallGuideView" , "MissCallView"})
+			"PersonalCentreView" ,"MissCallGuideView" , "MissCallSessionListView","MissCallSessionView","SMSSessionleftItem","SMSSessionRightItem"})
 	IViewGroup contents;
 	
 	
@@ -73,8 +76,21 @@ public abstract class HomePage extends PageBase {
 	@Bean(type=BindingType.Pojo,express="${psm.getAllUnreadSize()}")
 	int size;
 	
+	//int sel=res.getColor(R.color.gd_home_tabfont_sel);
+	//int unsel=res.getColor(R.color.gd_home_tabfont);
+	@Field(valueKey="textColor",binding="${hs ?  'resourceId:color/gd_home_tabfont_sel' : 'resourceId:color/gd_home_tabfont'}")
+	String textHomeSelected;
+	@Field(valueKey="textColor",binding="${ns ?  'resourceId:color/gd_home_tabfont_sel' : 'resourceId:color/gd_home_tabfont'}")
+	String textNewSelected;
+	@Field(valueKey="textColor",binding="${pd ?  'resourceId:color/gd_home_tabfont_sel' : 'resourceId:color/gd_home_tabfont'}")
+	String textPlazaSelected;
+	@Field(valueKey="textColor",binding="${psd ?  'resourceId:color/gd_home_tabfont_sel' : 'resourceId:color/gd_home_tabfont'}")
+	String textPersonalCentreSelected;
+	
+	
 	@Bean(type=BindingType.Service)
 	IPrivateSMService psm;
+	
 	
 	/**
 	 * 首页点击
@@ -82,11 +98,12 @@ public abstract class HomePage extends PageBase {
 	 * @param event
 	 * @return
 	 */
-	@Command(navigations = { @Navigation(on = "*", showView = "MainHomeView") })
+	@Command(navigations = { @Navigation(on = "*", showView = "MainHomeView",params={@Parameter(name = "add2BackStack", value = "false")})})
 	String goHome(InputEvent event) {
 		hs = true;
 		psd = pd = ns = false;
 		registerBeans();
+		hideView("MainHomeView");
 		return "";
 	}
 
@@ -96,11 +113,12 @@ public abstract class HomePage extends PageBase {
 	 * @param event
 	 * @return
 	 */
-	@Command(navigations = { @Navigation(on = "*", showView = "MicroMessageView") })
+	@Command(navigations = { @Navigation(on = "*", showView = "MicroMessageView",params={@Parameter(name = "add2BackStack", value = "false")}) })//,params={@Parameter(name = "add2BackStack", value = "false")
 	String goNews(InputEvent event) {
 		ns  = true;
 		psd = pd = hs = false;
 		registerBeans();
+		hideView("MicroMessageView");
 		return "";
 	}
 
@@ -110,11 +128,12 @@ public abstract class HomePage extends PageBase {
 	 * @param event
 	 * @return
 	 */
-	@Command(navigations = { @Navigation(on = "*", showView = "PlazaHomeView") })
+	@Command(navigations = { @Navigation(on = "*", showView = "PlazaHomeView",params={@Parameter(name = "add2BackStack", value = "false")}) })
 	String goPlaza(InputEvent event) {
 		pd  = true;
 		psd = ns = hs = false;
 		registerBeans();
+		hideView("MicroMessageView");
 		ImageView v = null;
 		return "";
 	}
@@ -125,12 +144,19 @@ public abstract class HomePage extends PageBase {
 	 * @param event
 	 * @return
 	 */
-	@Command(navigations = { @Navigation(on = "*", showView = "PersonalCentreView") })
+	@Command(navigations = { @Navigation(on = "*", showView = "PersonalCentreView",params={@Parameter(name = "add2BackStack", value = "false")}) })
 	String goPersonalCentre(InputEvent event) {
 		psd = true;
 		pd = ns = hs = false;
 		registerBeans();
+		hideView("MicroMessageView");
 		return "";
+	}
+	
+	
+	@OnShow
+	void showViewExt(){
+		System.out.print("homePage");
 	}
 	
 	private void registerBeans(){

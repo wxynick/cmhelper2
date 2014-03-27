@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 
-import com.wxxr.mobile.callhelper.app.model.ContactPerson;
+import com.wxxr.mobile.callhelper.app.bean.ContactPersonBean;
 import com.wxxr.mobile.callhelper.app.model.SMSStatus;
 
 public interface IPhoneSystemService extends ICommmonService{
@@ -45,7 +45,7 @@ public interface IPhoneSystemService extends ICommmonService{
 	/**
 	 * 发送通知
 	 */
-	void sentNotification(String tickerText);
+	void sentTextNotification(String tickerText);
 	
 	
 	/**
@@ -64,19 +64,19 @@ public interface IPhoneSystemService extends ICommmonService{
 	 * 返回电话的所有联系人的信息
 	 * @return
 	 */
-	List<ContactPerson> getAllContactPerson();
+	List<ContactPersonBean> getAllContactPerson();
 	
 	/**
 	 * 一个电话号码对应一个联系人，如果查出某个联系人是多个因该返回null
 	 * @param phoneNumber
 	 * @return
 	 */
-	ContactPerson getContactPersonByPhoneNumber(String phoneNumber);
+	ContactPersonBean getContactPersonByPhoneNumber(String phoneNumber);
 	
 	/**
 	 * 呼叫系统的打电话功能
 	 */
-	void callUp();
+	void callUp(String num);
 	
 	/**
 	 * @param Parameters
@@ -94,4 +94,11 @@ public interface IPhoneSystemService extends ICommmonService{
 	 * 停止录音
 	 */
 	void stopRecorder();
+	
+	
+	/**
+	 * 添加联系人
+	 * @param phoneNumber
+	 */
+	void addContactPerson(String phoneNumber);
 }

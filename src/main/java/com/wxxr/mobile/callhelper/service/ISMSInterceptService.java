@@ -6,7 +6,7 @@ public interface ISMSInterceptService {
 	
 	void addInterceptHandle(ISMSInterceptHandler handler);
 	
-	void remoteInterceptHandle(ISMSInterceptHandler handler);
+	void removeInterceptHandle(ISMSInterceptHandler handler);
 	
 	/**
 	 * 当接收到短信时，遍历handler 处理短信

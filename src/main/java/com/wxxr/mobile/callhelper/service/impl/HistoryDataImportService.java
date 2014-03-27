@@ -171,7 +171,6 @@ public class HistoryDataImportService extends AbstractModule<ICallHeplerAppConte
 
 	@Override
 	public boolean isNeedImport() {
-		
 		return needimport;
 	}
 

@@ -18,7 +18,18 @@ public class ContactPersonBean implements IBindableBean {
 	private String lastName;
 	private String phoneNumber;
 	private String fristName;
-	private Bitmap portrait;
+	private Byte[] portrait;
+	private String lastChar;
+
+	public String getLastChar() {
+		return lastChar;
+	}
+
+	public void setLastChar(String lastChar) {
+		String old = this.lastChar;
+		this.lastChar = lastChar;
+		this.emitter.firePropertyChange("lastChar", old, this.lastChar);
+	}
 
 	/**
 	 * @param listener
@@ -92,15 +103,15 @@ public class ContactPersonBean implements IBindableBean {
 	/**
 	 * @return the portrait
 	 */
-	public Bitmap getPortrait() {
+	public Byte[] getPortrait() {
 		return portrait;
 	}
 
 	/**
 	 * @param portrait the portrait to set
 	 */
-	public void setPortrait(Bitmap portrait) {
-		Bitmap old = this.portrait;
+	public void setPortrait(Byte[] portrait) {
+		Byte[] old = this.portrait;
 		this.portrait = portrait;
 		this.emitter.firePropertyChange("portrait", old, this.portrait);
 	}

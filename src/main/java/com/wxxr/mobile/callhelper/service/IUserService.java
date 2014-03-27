@@ -18,11 +18,11 @@ public interface IUserService {
 	public UserDetailBean getUserDetail();
 	
 	
-	/**
-	 * 获取用户详细信息
-	 * @param monitor
-	 */
-	public boolean updateUserDetail(UserDetailBean newValue);
+//	/**
+//	 * 获取用户详细信息
+//	 * @param monitor
+//	 */
+//	public boolean updateUserDetail(UserDetailBean newValue);
 	
 	/**
 	 * 上传图片
@@ -45,7 +45,7 @@ public interface IUserService {
     public void setNickName(String name);
     
     /**
-     * 设置昵称
+     * 设置性别
      * @param name
      */
     public void setGender(String gender);

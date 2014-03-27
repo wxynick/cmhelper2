@@ -53,17 +53,25 @@ public interface IDXHZService extends ICommmonService {
 	
 	
 	/**
-	 * 获取短信回执设置
+	 * 获取短信回执设置 --- 除了频道设置
+	 * @param what
 	 * @return
 	 */
-	DXHZSetting getDXHZSetting();
+	boolean getSomeOneSet(int what);
 	
 	
-	/**
-	 * 设置短信回执
-	 * @param setting
-	 * @return
-	 */
-	boolean setDXHZSetting(DXHZSetting setting);
+//	/**
+//	 * 获取短信回执设置
+//	 * @return
+//	 */
+//	DXHZSetting getDXHZSetting();
+//	
+//	
+//	/**
+//	 * 设置短信回执
+//	 * @param setting
+//	 * @return
+//	 */
+//	boolean setDXHZSetting(DXHZSetting setting);
 	
 }

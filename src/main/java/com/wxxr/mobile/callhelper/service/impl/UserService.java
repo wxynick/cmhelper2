@@ -29,7 +29,7 @@ public class UserService extends AbstractModule<ICallHeplerAppContext> implement
 	/* (non-Javadoc)
 	 * @see com.wxxr.mobile.callhelper.service.IUserService#updateUserDetail(com.wxxr.mobile.callhelper.app.model.UserDetail)
 	 */
-	@Override
+//	@Override
 	public boolean updateUserDetail(UserDetailBean newValue) {
 		
 		return false;

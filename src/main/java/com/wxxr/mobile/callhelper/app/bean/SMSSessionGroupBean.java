@@ -23,11 +23,26 @@ public class SMSSessionGroupBean implements IBindableBean {
 	private String showSessionContent;
 	private String contactName;
 	private List<SMSInfoBean> sms;
-	private Bitmap portrait;
+	private String portrait;
 	private int size;
 	private String date;
 	
 	
+	
+	private boolean selected;
+	
+	
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		boolean old = this.selected;
+		this.selected = selected;
+		this.emitter.firePropertyChange("selected", old, this.selected);
+		
+	}
+
 	public String getDate() {
 		return date;
 	}
@@ -145,15 +160,15 @@ public class SMSSessionGroupBean implements IBindableBean {
 	/**
 	 * @return the portrait
 	 */
-	public Bitmap getPortrait() {
+	public String getPortrait() {
 		return portrait;
 	}
 
 	/**
 	 * @param portrait the portrait to set
 	 */
-	public void setPortrait(Bitmap portrait) {
-		Bitmap old = this.portrait;
+	public void setPortrait(String portrait) {
+		String old = this.portrait;
 		this.portrait = portrait;
 		this.emitter.firePropertyChange("portrait", old, this.portrait);
 	}
@@ -185,7 +200,7 @@ public class SMSSessionGroupBean implements IBindableBean {
                 " , showSessionContent=" + this.showSessionContent +
                 " , contactName=" + this.contactName +
                 " , sms=" + this.sms +
-                " , portrait=" + this.portrait +
+//                " , portrait=" + this.portrait +
                 " , size=" + this.size +
         "]";
     }	

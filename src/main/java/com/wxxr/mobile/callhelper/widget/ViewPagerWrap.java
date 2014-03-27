@@ -6,6 +6,8 @@ package com.wxxr.mobile.callhelper.widget;
 
 import java.util.ArrayList;
 
+import com.wxxr.mobile.callhelper.R;
+
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -14,7 +16,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.wxxr.mobile.callhelper.R;
 
 /**
  * @author fudapeng

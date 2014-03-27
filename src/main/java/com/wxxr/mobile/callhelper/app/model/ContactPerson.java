@@ -1,10 +1,8 @@
 package com.wxxr.mobile.callhelper.app.model;
 
-import java.util.List;
 
 import com.wxxr.mobile.core.annotation.BindableBean;
 
-import android.graphics.Bitmap;
 
 /**
  * @author fudapeng
@@ -24,7 +22,7 @@ public class ContactPerson {
 	/**
 	 * 头像
 	 */
-	private Bitmap portrait;
+	private String portrait;
 	
 	/**
 	 * 手机电话号码
